@@ -24,13 +24,13 @@ public class SendMessageThread extends Thread{
     public void run(){
         String message;
         while (IsRunning) {
-            message = NameGetter.getName() + ": " + keyboard.nextLine();
+            message = keyboard.nextLine();
 
-            if (message.equals(NameGetter.getName()+ ": " + "exit")){
+            if (message.equals("exit")){
                 shutdown();
                 break;
             }
-            String encryptedMessage = encryptor.encrypt(YELLOW + message);
+            String encryptedMessage = encryptor.encrypt(YELLOW + NameGetter.getName() + ": " + message);
             System.out.println(CYAN + "Você: " + message);
             out.println(encryptedMessage);
         }
