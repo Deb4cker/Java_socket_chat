@@ -26,7 +26,7 @@ public class Mapper {
         if (!loaded){
             keys = new HashMap<>();
 
-            for (int i = 0; i < 128; i++) {
+            for (int i = 0; i < 32786; i++) {
                 char character = (char) i;
                 String hash = Hasher.toSHA256(String.valueOf(character), salt);
                 keys.put(hash, character);

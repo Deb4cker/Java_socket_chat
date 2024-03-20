@@ -6,6 +6,8 @@ import udesc.ddm.Threads.SendMessageThread;
 import java.io.IOException;
 import java.net.Socket;
 
+import static udesc.ddm.Commons.Colors.GREEN;
+
 public class AsyncClient extends Client{
 
     public AsyncClient(String serverIp, int serverPort) {
@@ -16,7 +18,7 @@ public class AsyncClient extends Client{
     public void order() throws IOException {
         while (true) {
             this.conn = new Socket(serverIp, serverPort);
-            System.out.println("service connected.");
+            System.out.println(GREEN + "service connected.");
 
             setIn();
             setOut();

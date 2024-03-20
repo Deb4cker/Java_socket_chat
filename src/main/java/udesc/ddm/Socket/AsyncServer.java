@@ -6,7 +6,7 @@ import udesc.ddm.Threads.SendMessageThread;
 import java.io.IOException;
 import java.net.ServerSocket;
 
-import static java.awt.Color.ORANGE;
+import static udesc.ddm.Commons.Colors.YELLOW;
 import static udesc.ddm.Commons.Colors.GREEN;
 
 public class AsyncServer extends Server{
@@ -19,7 +19,7 @@ public class AsyncServer extends Server{
     public void serve() throws IOException {
         server.setReuseAddress(true);
         while (true) {
-            System.out.println(ORANGE + "Waiting connection...");
+            System.out.println(YELLOW + "Waiting connection...");
             connection = server.accept();
             System.out.println(GREEN + "Someone connected");
 
